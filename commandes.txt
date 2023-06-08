@@ -1,0 +1,150 @@
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/lina/Desktop/learn_git_again/.
+git/
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git add third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m 'adding third.txt'
+[master (root-commit) 363a40e] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 363a40e73785abdc403dc30fdbcca5d5a3a892c9 (HEAD -> master)
+Author: FirasGMC <ffiras.2023@gmail.com>
+Date:   Thu Jun 8 09:08:19 2023 +0100
+
+    adding third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+fatal: pathspec 'fourth.txt' did not match any files
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ touch fourth.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m 'adding fourth.txt'
+[master b863d74] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ rm third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git add thir.txt
+fatal: pathspec 'thir.txt' did not match any files
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git add third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit b863d74f51d1300ee1abe4572e1182bc0ff79ec6 (HEAD -> master)
+Author: FirasGMC <ffiras.2023@gmail.com>
+Date:   Thu Jun 8 09:10:01 2023 +0100
+
+    adding fourth.txt
+
+commit 363a40e73785abdc403dc30fdbcca5d5a3a892c9
+Author: FirasGMC <ffiras.2023@gmail.com>
+Date:   Thu Jun 8 09:08:19 2023 +0100
+
+    adding third.txt
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.page=cat
+error: invalid key: core.page=cat
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.page
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-patt
+ern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pa
+ttern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, com
+mand line)
+    --show-scope          show scope of config (worktree, local, global, system,
+ command)
+    --default <value>     with --get, use default value when missing entry
+
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=ffiras.2023@gmail.com
+user.name=FirasGMC
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global user.name "FirasGMC"
+
+lina@DESKTOP-AR1JP77 MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global user.email "ffiras.2023@gmail.com"
